@@ -4,4 +4,4 @@ SDL-IBM Watson Tone Analyzer Solution/SDL.IBM.Tone.Analyzer.WEBApp/obj/Release/P
 SDL-IBM Watson Tone Analyzer Solution/SDL.IBM.Tone.Analyzer.WEBApp/Scripts/* linguist-vendored
 * linguist-vendored
 *.js linguist-vendored=false
-*.js linguist-language=C#
+*.js linguist-language=C# 
