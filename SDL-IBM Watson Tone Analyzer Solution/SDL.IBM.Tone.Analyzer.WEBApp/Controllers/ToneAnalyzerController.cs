@@ -19,7 +19,7 @@ namespace SDL.IBM.Tone.Analyzer.WEBApp.Controllers
             if (!string.IsNullOrEmpty(text))
             {
 
-                ToneAnalysis data = WatsonToneAnalyzerHelper.PostDataAndGetResponse(text, "539f5087-eae9-4cab-bf67-0c8902c7a163", "PjCjY8PqfaXs");
+                ToneAnalysis data = WatsonToneAnalyzerHelper.PostDataAndGetResponse(text, "<UID>", "<PWD>");
                 finalData.Add(data);
 
             }

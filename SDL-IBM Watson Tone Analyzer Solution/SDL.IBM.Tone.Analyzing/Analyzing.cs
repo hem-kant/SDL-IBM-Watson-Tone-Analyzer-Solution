@@ -53,7 +53,7 @@ namespace SDL.IBM.Tone.Analyzing
                         spaceCount = 1;
                     }
 
-                    ToneAnalysis data = WatsonToneAnalyzerHelper.PostDataAndGetResponse(sb.ToString(), "539f5087-eae9-4cab-bf67-0c8902c7a163", "PjCjY8PqfaXs");
+                    ToneAnalysis data = WatsonToneAnalyzerHelper.PostDataAndGetResponse(sb.ToString(), "<UID>", "<PWD>");
                     finalData.Add(data);
                 }
 
