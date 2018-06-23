@@ -1,0 +1,159 @@
+﻿@using IBM.WatsonDeveloperCloud.ToneAnalyzer.v3.Model;
+
+@model List<ToneAnalysis>
+
+<div class="jumbotron">
+    <h1>SDL IBM Tone Analyzer Service </h1>
+    <p class="lead">The Tone Analyzer service analyzes the tone of input content. </br>One of the advancements of artificial intelligence and machine learning to content management systems is understanding the performance of content. Content creators can analyze how content has come across to readers, which tone resonates with which audience.</p>
+
+    <div class="form-group has-feedback">
+        <form action="/home/index" method="get">
+            <input name="q" type="text" class="form-control" id="searchInput" placeholder="Search">
+            <button class="btn btn-primary btn-lg">
+                Enter the URL
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="container">
+    @if (Model.Count > 0)
+    {
+
+        <div class="row">
+            <span class="pull-right">
+                <!-- Tabs -->
+                <ul class="nav panel-tabs">
+                    <li class="active"><a href="#line" data-toggle="tab">Line</a></li>
+                    <li><a href="#sentence" data-toggle="tab">Sentence</a></li>
+
+                </ul>
+            </span>
+            <section class="content">
+                <h1>Table Filter</h1>
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success btn-filter" data-target="joy">Joy</button>
+                                    <button type="button" class="btn btn-warning btn-filter" data-target="fear">Fear</button>
+                                    <button type="button" class="btn btn-danger btn-filter" data-target="sadness">Sadness</button>
+                                    <button type="button" class="btn btn-danger btn-filter" data-target="analytical">Analytical</button>
+                                    <button type="button" class="btn btn-danger btn-filter" data-target="confident">Confident</button>
+                                    <button type="button" class="btn btn-danger btn-filter" data-target="tentative">Tentative</button>
+                                    <button type="button" class="btn btn-danger btn-filter" data-target="anger">Anger</button>
+                                    <button type="button" class="btn btn-default btn-filter" data-target="all">All</button>
+                                </div>
+                            </div>
+                            <div class="table-container">
+
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="line">
+                                        <table class="table table-filter">
+                                            <tbody>
+                                                @foreach (var items in Model)
+                                                {
+                                                    if (items.DocumentTone.Tones.Count() > 0)
+                                                    {
+                                                        foreach (var tone in items.DocumentTone.Tones)
+                                                        {
+                                                            string image = tone.ToneName + ".png";
+                                                            <tr data-status="@tone.ToneId">
+                                                                <td>
+                                                                    <div class="media">
+                                                                        <a href="#" class="pull-left">
+                                                                            <img src="~/Icons/@image" class="media-photo">
+                                                                        </a>
+                                                                        <div class="media-body">
+
+                                                                            <h4 class="title">
+                                                                                ( Score : @tone.Score )
+
+                                                                                <span class="pull-right @tone.ToneId">(@tone.ToneName)</span>
+                                                                            </h4>
+                                                                            <p class="summary">@items.input</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        }
+                                                    }
+
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane" id="sentence">
+                                        <table class="table table-filter">
+                                            <tbody>
+                                                @foreach (var items in Model)
+                                                {
+                                                    if (items.DocumentTone.Tones.Count() > 0 && items.SentencesTone != null && items.SentencesTone.Count() > 0)
+                                                    {
+                                                        string image = string.Empty;
+                                                        string toneId = string.Empty;
+                                                        var higestScore = items.DocumentTone.Tones.Max(x => x.Score);
+                                                        var value = items.DocumentTone.Tones.Where(x => x.Score == higestScore);
+                                                        foreach (var tone in value)
+                                                        {
+
+                                                            image = tone.ToneName + ".png";
+                                                            toneId = tone.ToneId;
+
+                                                        }
+                                                        <tr data-status="@toneId">
+                                                            <td>
+                                                                <div class="media">
+                                                                    <a href="#" class="pull-left">
+                                                                        <img src="~/Icons/@image" class="media-photo">
+                                                                    </a>
+                                                                    <div class="media-body">
+                                                                        <h2>
+                                                                            @items.input
+                                                                        </h2>
+                                                                        @foreach (var sentence in items.SentencesTone)
+                                                                        {
+                                                                            if (sentence.Tones.Count() > 0)
+                                                                            {
+                                                                                foreach (var sentenceTone in sentence.Tones)
+                                                                                {
+                                                                                    <h4 class="title">
+                                                                                        ( Score : @sentenceTone.Score )
+
+                                                                                        <span class="pull-right @sentenceTone.ToneId">(@sentenceTone.ToneName)</span>
+                                                                                    </h4>
+                                                                                        <p class="summary">@sentence.Text</p>
+                                                                                }
+
+                                                                            }
+                                                                        }
+
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        // }
+                                                    }
+                                                    else
+                                                    {
+                                                        <h2>No Sentence Found !!!</h2>
+                                                    }
+
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    }
+
+</div>

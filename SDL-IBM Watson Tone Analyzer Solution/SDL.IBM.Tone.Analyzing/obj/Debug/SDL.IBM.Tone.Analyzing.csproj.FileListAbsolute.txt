@@ -1,0 +1,11 @@
+C:\Users\cb-in\Documents\Personal\MVPRetreat\SDL-IBM Watson Tone Analyzer Solution\SDL.IBM.Tone.Analyzing\bin\Debug\SDL.IBM.Tone.Analyzing.dll
+C:\Users\cb-in\Documents\Personal\MVPRetreat\SDL-IBM Watson Tone Analyzer Solution\SDL.IBM.Tone.Analyzing\bin\Debug\SDL.IBM.Tone.Analyzing.pdb
+C:\Users\cb-in\Documents\Personal\MVPRetreat\SDL-IBM Watson Tone Analyzer Solution\SDL.IBM.Tone.Analyzing\bin\Debug\HtmlAgilityPack.dll
+C:\Users\cb-in\Documents\Personal\MVPRetreat\SDL-IBM Watson Tone Analyzer Solution\SDL.IBM.Tone.Analyzing\bin\Debug\IBM.WatsonDeveloperCloud.dll
+C:\Users\cb-in\Documents\Personal\MVPRetreat\SDL-IBM Watson Tone Analyzer Solution\SDL.IBM.Tone.Analyzing\bin\Debug\Newtonsoft.Json.dll
+C:\Users\cb-in\Documents\Personal\MVPRetreat\SDL-IBM Watson Tone Analyzer Solution\SDL.IBM.Tone.Analyzing\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\cb-in\Documents\Personal\MVPRetreat\SDL-IBM Watson Tone Analyzer Solution\SDL.IBM.Tone.Analyzing\bin\Debug\HtmlAgilityPack.xml
+C:\Users\cb-in\Documents\Personal\MVPRetreat\SDL-IBM Watson Tone Analyzer Solution\SDL.IBM.Tone.Analyzing\bin\Debug\Newtonsoft.Json.xml
+C:\Users\cb-in\Documents\Personal\MVPRetreat\SDL-IBM Watson Tone Analyzer Solution\SDL.IBM.Tone.Analyzing\obj\Debug\SDL.IBM.Tone.Analyzing.dll
+C:\Users\cb-in\Documents\Personal\MVPRetreat\SDL-IBM Watson Tone Analyzer Solution\SDL.IBM.Tone.Analyzing\obj\Debug\SDL.IBM.Tone.Analyzing.pdb
+C:\Users\cb-in\Documents\Personal\MVPRetreat\SDL-IBM Watson Tone Analyzer Solution\SDL.IBM.Tone.Analyzing\obj\Debug\SDL.IBM.Tone.Analyzing.csprojResolveAssemblyReference.cache
